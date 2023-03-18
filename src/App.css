@@ -1,38 +1,429 @@
+:root {
+  --pri: rgb(250, 211, 210);
+  --dark: #003152;
+}
+
+
+
+body,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button {
+  display: inline-block;
+  background: none;
+  border: 2px solid;
+  cursor: pointer;
+  color: var(--dark);
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+button:hover {
+  color: var(--pri);
+  background-color: var(--dark);
+}
+
+input {
+  border: 2px solid var(--dark);
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  /* color: #dddbff; */
+  font-weight: normal;
+  margin: 0;
+}
+
+
+form {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+h1,
+h3 {
+  font-size: 1.2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  font-size: 20px;
+  background-color: var(--dark);
+  color: var(--pri);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.headerContainer .logo {
+  margin-bottom: 10px;
+}
+
+.headerContainer .acount {
+  margin-bottom: 20px;
+}
+
+.formContainer {
+  width: 100vw;
+  max-width: 400px;
+  padding-left: 5px;
+}
+
+.searchForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.searchSuggestions {
+  border-right: 0;
+  border-bottom: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.datePicker {
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10%;
+  background-color: var(--dark);
+  color: var(--pri);
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 6);
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 10%;
+  border: 1px solid black;
+}
+
+.counter h3 {
+  margin-left: 20px;
+}
+
+.category .counter button {
+  color: aliceblue;
+  border: none;
+  box-shadow: none;
+}
+
+.counter h3 {
+  font-size: 20px;
+}
+
+.searchButton {
+  border-radius: 0 1px 30px 0;
+  border-top: 0;
+  margin-top: 1px;
+  padding: 15px;
+}
+
+@media screen and (min-width : 500px) {
+  .headerContainer {
+    grid-template-columns: 1fr 1fr;
+    padding: 5%;
+  }
+
+  .headerContainer .acount {
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .formContainer {
+    width: 80vw;
+    max-width: 700px;
+  }
+
+  .searchForm {
+    width: 100%;
+    gap: 50px;
+    padding: 50px;
+  }
+
+  .searchSuggestions {
+    border-right: 2px solid var(--dark);
+  }
+
+  .datePicker {
+    border-right: 2px solid var(--dark);
+  }
+
+  .options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    background-color: var(--dark);
+    border: 2px solid black;
+    border-radius: 40px 10 40px 0;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 6);
+  }
+
+  .category {
+    display: block;
+    grid-template-columns: 1fr;
+  }
+
+  .category h1 {
+    margin-left: 10px;
+    font-weight: 700;
+  }
+
+  .childrenNum h1 {
+    margin-left: 0;
+  }
+
+  .counter {
+    grid-template-columns: 1fr;
+    width: 50px;
+    height: 120px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .counter h3 {
+    margin-top: 10px;
+    margin-left: 20px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media screen and (min-width : 750px) {
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .headerContainer {
+    height: 200px;
+    align-items: center;
+    padding-left: 15%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .headerContainer .count {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .formContainer {
+    width: 80vw;
+    max-width: 1000px;
+  }
+
+  .searchForm {
+    width: 100%;
+    gap: 50px;
+    padding: 50px;
+  }
+
+  .searchSuggestions {
+    border: 2px solid #003152;
+    border-radius: 10px;
+    height: 50px;
+  }
+
+  .datePicker {
+    border: 2px solid #003152;
+    border-radius: 10px;
+    height: 50px;
+  }
+
+
+  .options {
+    gap: 20px;
+    padding: 10%;
+    background-color: var(--pri);
+    color: #003152;
+    border: 2px solid black;
+    border-radius: 200px 0;
+    font-size: 20px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 6);
+  }
+
+
+  .category {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category .counter button {
+    color: black;
+    border: none;
+    box-shadow: none;
+  }
+
+  .counter h3 {
+    font-size: 20px;
+  }
+
+  .searchButton {
+    border-radius: 0 1px 30px 0;
+    border-top: 0;
+    padding: 15px;
+  }
+
+}
+
+
+/* Desktop */
+
+
+@media screen and (min-width : 1200px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 0;
+  }
+
+  .headerContainer {
+    grid-column: 1/13;
+    grid-row: 1;
+    height: 250px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .headerContainer .acount {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .formContainer {
+    grid-column: 5/11;
+    grid-row: 1;
+    margin-top: 350px;
+  }
+
+  .searchForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #ffa700;
+    height: 65px;
+    width: 850px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .searchSuggestions {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 50px;
+  }
+
+  .searchSuggestions:focus {
+    outline: none;
+  }
+
+  .datePicker {
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 3px;
+    cursor: pointer;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    padding: 10px;
+    border: solid 5px #ffa700;
+    border-radius: 20px 0px;
+    color: wheat;
+    background-color: blue;
+  }
+
+  .options .counter {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px 20px;
+  }
+
+
+  .options .counter h3 {
+    padding: 0px;
+  }
+
+  .options button {
+    border: none;
+    background-color: transparent;
+    color: wheat;
+  }
+
+  .searchButton {
+    width: 250px;
+    height: 60px;
+    margin-right: 0;
+    margin-left: auto;
+    float: right;
+    color: #ffff;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    margin-left: auto;
+  }
+
+  button:hover {
+    color: var(--pri);
+    background-color: var(--dark);
+    font-size: larger;
+    font-weight: 600;
   }
 }
