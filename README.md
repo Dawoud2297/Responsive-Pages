@@ -28,4 +28,4 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ## Master
-# Mobile-First Design Hotels Search.
+Mobile-First Design Hotels Search.
