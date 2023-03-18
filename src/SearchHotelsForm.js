@@ -46,7 +46,6 @@ const SearchHotelsForm = () => {
                 <div className='date'>
                     <DatePicker
                         className='datePicker'
-                        onInput={e => (e.target.value = !!e.target.value && Math.abs(e.target.value) >= 0 ? Math.abs(e.target.value) : null)}
                         selectsRange={true}
                         startDate={checkIn}
                         endDate={checkOut}
