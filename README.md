@@ -6,4 +6,4 @@ In the project directory, you can run:
 # Branches
 ## Master
 Mobile-First Design Hotels Search.
-https://qykth7-3000.csb.app/
+https://pv75lj.csb.app/
